@@ -1,0 +1,100 @@
+<html>
+    <head>
+       
+        <script>
+            know = {
+                "hello" : "*hi",
+                "hey":"*hi",
+                "hi":"*hello",
+                "how are you?" : "*good. And what about you?",
+                "good":"*ok",
+                "how r u":"*fine . And what about you?",
+                "how u doin":"*great. And what about you?",
+                "ok" : ":)",
+                "k":"*hmm",
+                "what are you doing?":"*nothing" ,
+                "what r u doing":"*nothing",
+                "okay":":)"   ,
+                "have a nice day":"*thank you and you too"  
+             };
+            function talk() {
+                var user = document.getElementById("inline").value;
+                document.getElementById("inline").value = "";
+                document.getElementById("chat").innerHTML += user+"<br>";
+                if (user in know) {
+                    document.getElementById("chat").innerHTML += know[user]+"<br>";
+                } else {
+                    document.getElementById("chat").innerHTML += "I don't understand...<br>";
+                }
+            } 
+        </script>
+         <style>
+             body{
+                 margin:0;
+                 padding:0;
+                 border: 40px solid burlywood;
+                 background-color:burlywood ;
+
+                 
+             }
+            
+        
+            .container{
+                width: 300px;
+                height: 550px;
+                border-radius: 6%;
+                margin-top: 5%  ;
+                border:  10px solid brown;
+                background-color: coral;
+                margin-left: 40%;
+                
+            }
+              .chat{
+              width:200px;  
+              height: 300px;
+              border: 10px solid brown;
+              border-radius: 4%;
+              margin-left: 15%;
+              margin-top: -160%;
+              background-color:lightseagreen;
+
+
+            }
+                
+              
+                
+               
+            
+            
+
+        </style>
+    </head>
+    <body>
+           
+        
+        <div class="container">
+              <h3 style="margin-left: 30%;">CHATBOX</h3>
+              
+            <p>**Type Here** 
+         <input id="inline" type="text" onkeydown="if (event.keyCode == 13) {talk()}" style="margin-top: 450px;" style="position: fixed;">
+        </p>
+          
+            <div class="chat">
+                <p id="chat"></p> 
+                
+            </div>
+        </div>
+           
+                
+       
+            
+       
+            
+        
+        
+       
+        
+                
+    
+    </body>
+</html>
